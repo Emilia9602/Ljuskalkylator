@@ -1,5 +1,6 @@
 import type { ReactNode } from "react"
 import Navigation from "./Navigation"
+import Header from "./Header"
 
 type AppLayoutProps = {
     children: ReactNode
@@ -8,9 +9,12 @@ type AppLayoutProps = {
 function AppLayout({ children }: AppLayoutProps) {
     return (
         <div>
+            <Header />
             <Navigation />
             <main>
-                {children}
+                <div className="mx-auto w-full max-w-7xl px-4">
+                    {children}
+                </div>
             </main>
         </div>
     )
