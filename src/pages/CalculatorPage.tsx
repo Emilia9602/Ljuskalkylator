@@ -7,6 +7,9 @@ function CalculatorPage() {
             <p className="text-[#6B625A]">
                 Skapa och beräkna dina ljusrecept.
             </p>
+            <p className="mt-4 text-[#6B625A]">
+                Här kommer du kunna skapa recept, välja material och beräkna kostnader.
+            </p>
         </section>
     )
 }

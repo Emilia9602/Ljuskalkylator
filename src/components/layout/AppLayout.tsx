@@ -11,6 +11,7 @@ function AppLayout({ children }: AppLayoutProps) {
         <div className="min-h-screen bg-[#FAF6EE]">
             <Header />
             <Navigation />
+
             <main className="py-8">
                 <div className="mx-auto w-full max-w-7xl rounded-2xl bg-[#FAF7F2] px-6 py-8 shadow-sm">
                     {children}
