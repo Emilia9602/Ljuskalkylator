@@ -1,12 +1,11 @@
+import PageHeader from "../components/ui/PageHeader";
+
 function MaterialsPage() {
     return (
         <section>
-            <h1 className="mb-2 text-3xl font-semibold text-[#342D26]">
-                Materialregister
-            </h1>
-            <p className="text-[#6B625A]">
-                Hantera material och ingredienser.
-            </p>
+            <PageHeader
+                title="Materialregister"
+                description="Hantera material och ingredienser" />
         </section>
     )
 }
