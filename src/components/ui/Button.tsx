@@ -1,6 +1,6 @@
-import type { ReactNode } from "react"
+import type { ReactNode, ButtonHTMLAttributes } from "react"
 
-type ButtonProps = {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     children: ReactNode
     variant?: "primary" | "secondary" | "destructive"
     className?: string
@@ -10,6 +10,8 @@ function Button({
     children,
     variant = "primary",
     className = "",
+    type = "button",
+    ...props
 }: ButtonProps) {
     const variants = {
         primary:
@@ -22,7 +24,9 @@ function Button({
 
     return (
         <button
-            className={`min-h-12 rounded-xl px-4 py-2 text-[15px] font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8C6843] ${variants[variant]} ${className}`}
+            type={type}
+            className={`min-h-12 rounded-xl px-4 py-2 text-[15px] font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8C6843] disabled:cursor-not-allowed disabled:opacity-50 ${variants[variant]} ${className}`}
+            {...props}
         >
             {children}
         </button>

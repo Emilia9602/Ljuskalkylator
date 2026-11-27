@@ -8,7 +8,11 @@ function NotFoundPage() {
                 <SearchX size={26} strokeWidth={1.8} aria-hidden="true" />
             </div>
 
-            <h1 className="mt-5 text-xl font-semibold text-[#342D26]">
+            <p className="mt-5 text-sm font-semibold tracking-[0.2em] text-[#8C6843]">
+                404
+            </p>
+
+            <h1 className="mt-2 text-xl font-semibold text-[#342D26]">
                 Sidan kunde inte hittas
             </h1>
 
