@@ -9,13 +9,15 @@ type AppLayoutProps = {
 function AppLayout({ children }: AppLayoutProps) {
     return (
         <div className="min-h-screen bg-[#FAF6EE]">
-            <Header />
-            <Navigation />
-
-            <main className="py-8">
-                <div className="mx-auto w-full max-w-7xl rounded-2xl bg-[#FAF7F2] px-6 py-8 shadow-sm">
-                    {children}
+            <header className="border-b border-[#E6D3B4] bg-[#FAF7F2]">
+                <div className="mx-auto flex w-full max-w-[1120px] flex-col gap-4 px-6 py-5 lg:flex-row lg:items-center lg:justify-between">
+                    <Header />
+                    <Navigation />
                 </div>
+            </header>
+
+            <main className="mx-auto w-full max-w-[1120px] px-6 py-8">
+                {children}
             </main>
         </div>
     )
