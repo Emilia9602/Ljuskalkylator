@@ -21,7 +21,7 @@ function StatusBreakdown({ counts, large = false }: StatusBreakdownProps) {
     return (
         <dl className="m-0 grid grid-cols-3 gap-2">
             {items.map(({ status, value }) => (
-                <div key={status} className="flex flex-col items-start gap-1.5">
+                <div key={status} className="flex flex-col items-center gap-1.5">
                     <dt className="order-2">
                         <StatusBadge status={status} size="sm" />
                     </dt>

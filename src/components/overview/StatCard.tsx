@@ -19,21 +19,23 @@ function StatCard({
 }: StatCardProps) {
     return (
         <Card>
-            <div className="mb-3 flex items-center gap-2.5">
+            <div className="mb-3 flex items-start gap-2.5">
                 {icon && (
                     <IconBox size="md">
                         {icon}
                     </IconBox>
                 )}
 
-                <p className="text-sm font-medium text-[#8C6843]">
-                    {title}
-                </p>
-            </div>
+                <div className="flex flex-col gap-4">
+                    <p className="text-sm font-medium text-[#8C6843]">
+                        {title}
+                    </p>
 
-            <p className="text-3xl font-semibold text-[#342D26]">
-                {value}
-            </p>
+                    <p className="text-3xl font-semibold text-[#342D26]">
+                        {value}
+                    </p>
+                </div>
+            </div>
 
             {description && (
                 <p className="mt-2 text-sm leading-relaxed text-[#6B625A]">
@@ -42,7 +44,7 @@ function StatCard({
             )}
 
             {children && (
-                <div className="mt-4 pt-3">
+                <div className="mt-2 pt-2">
                     {children}
                 </div>
             )}

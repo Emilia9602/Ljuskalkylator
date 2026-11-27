@@ -4,7 +4,7 @@ import Card from "../ui/Card"
 
 function QuickAccess() {
     return (
-        <Card className="flex flex-col gap-3 p-6">
+        <Card className="flex flex-col gap-4 p-6">
             <h2 className="mb-0.5 text-xs font-semibold uppercase tracking-[0.12em] text-[#8C6843]">
                 Snabbåtkomst
             </h2>

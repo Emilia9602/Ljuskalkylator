@@ -1,17 +1,27 @@
 import QuickAccess from "../components/overview/QuickAccess"
 import RecentRecipes from "../components/overview/RecentRecipes"
-import RecipeStatusSummary from "../components/overview/RecipesStatusSummary"
 import StatusBreakdown from "../components/overview/StatusBreakdown"
 import StatCard from "../components/overview/StatCard"
 import PageHeader from "../components/ui/PageHeader"
 import { NotebookText, Package } from "lucide-react"
 
 function OverviewPage() {
+    // const recipeCounts = {
+    // utkast: "[antal]",
+    // ejTestat: "[antal]",
+    //  godkant: "[antal]",
+    //}
+
     const recipeCounts = {
-        utkast: "[antal]",
-        ejTestat: "[antal]",
-        godkant: "[antal]",
+        utkast: 0,
+        ejTestat: 0,
+        godkant: 0,
     }
+
+    const hasRecipes = Object.values(recipeCounts).some((count) => count > 0)
+
+    const materialCount = 0
+    const hasMaterials = materialCount > 0
 
     return (
         <section>
@@ -23,20 +33,35 @@ function OverviewPage() {
             <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
                 <StatCard
                     title="Sparade recept"
-                    value="[antal]"
+                    value="0"
                     icon={<NotebookText size={20} strokeWidth={1.8} />}
                 >
                     <div className="hidden border-t border-[#EFE4D2] pt-3.5 sm:block">
-                        <RecipeStatusSummary />
+                        {hasRecipes ? (
+                            <StatusBreakdown counts={recipeCounts} />) : (
+                            <p className="text-sm mt-4 text-[#6B625A]">
+                                Dina recept och deras status visas här när du har skapat ditt första recept.
+                            </p>
+                        )}
                     </div>
                 </StatCard>
 
                 <StatCard
                     title="Aktiva material"
-                    value="[antal]"
-                    description="Arkiverade material räknas inte"
+                    value={String(materialCount)}
+                    description="Arkiverade material räknas inte."
                     icon={<Package size={20} strokeWidth={1.8} />}
-                />
+                >
+                    {hasMaterials ? (
+                        <p className="text-sm text-[#6B625A]">
+                            Dina aktiva material visas här.
+                        </p>
+                    ) : (
+                        <p className="text-sm text-[#6B625A]">
+                            Dina material visas här när du har lagt till ditt första material.
+                        </p>
+                    )}
+                </StatCard>
 
                 <QuickAccess />
 
