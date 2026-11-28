@@ -6,12 +6,6 @@ import PageHeader from "../components/ui/PageHeader"
 import { NotebookText, Package } from "lucide-react"
 
 function OverviewPage() {
-    // const recipeCounts = {
-    // utkast: "[antal]",
-    // ejTestat: "[antal]",
-    //  godkant: "[antal]",
-    //}
-
     const recipeCounts = {
         utkast: 0,
         ejTestat: 0,
@@ -38,8 +32,9 @@ function OverviewPage() {
                 >
                     <div className="hidden border-t border-[#EFE4D2] pt-3.5 sm:block">
                         {hasRecipes ? (
-                            <StatusBreakdown counts={recipeCounts} />) : (
-                            <p className="text-sm mt-4 text-[#6B625A]">
+                            <StatusBreakdown counts={recipeCounts} />
+                        ) : (
+                            <p className="mt-4 text-sm text-[#6B625A]">
                                 Dina recept och deras status visas här när du har skapat ditt första recept.
                             </p>
                         )}
@@ -63,15 +58,17 @@ function OverviewPage() {
                     )}
                 </StatCard>
 
-                <QuickAccess />
-
                 <section className="col-span-full flex flex-col gap-3 rounded-[18px] border border-[#E6D3B4] bg-[#FAF7F2] p-4 shadow-[0_1px_3px_rgba(52,45,38,0.06)] sm:hidden">
-                    <h2 className="m-0 text-xs font-semibold uppercase tracking-[0.1em] text-[#8C6843]">
+                    <h2 className="m-0 text-center text-xs font-semibold uppercase tracking-[0.1em] text-[#8C6843]">
                         Recept per status
                     </h2>
 
                     <StatusBreakdown counts={recipeCounts} large />
                 </section>
+
+                <div className="col-span-full h-full lg:col-span-1">
+                    <QuickAccess />
+                </div>
             </div>
 
             <div className="mt-4">

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 const NAV_LINKS = [
     { label: "Översikt", path: "/" },
-    { label: "Receptkalkylator", path: "/calculator" },
+    { label: "Recept\u00ADkalkylator", path: "/calculator" },
     { label: "Mina recept", path: "/recipes" },
     { label: "Materialregister", path: "/materials" },
     { label: "Inställningar", path: "/settings" },

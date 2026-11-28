@@ -71,7 +71,7 @@ function RecentRecipes() {
                                 className="flex min-h-16 items-center gap-4 px-6 py-4 text-[#342D26] no-underline transition-colors hover:bg-[#F6EFE3] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[#8C6843] max-sm:min-h-[72px] max-sm:gap-3 max-sm:px-4 max-sm:py-3.5"
                             >
                                 <div className="flex min-w-0 flex-1 flex-col gap-1 max-sm:gap-1.5">
-                                    <span className="text-[15px] font-semibold">
+                                    <span className="break-words text-[15px] font-semibold">
                                         {recipe.name}
                                     </span>
 
