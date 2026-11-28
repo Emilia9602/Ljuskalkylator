@@ -1,7 +1,7 @@
 function App() {
   return (
     <div>
-      <h1>Ljuskalkylatorn</h1>
+      <h1>Ljuskalkylatorn dev</h1>
     </div>
   )
 }
